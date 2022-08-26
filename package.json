@@ -1,0 +1,14 @@
+{
+	"name": "SNS_test",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "node ./index.js"
+	},
+	"dependencies": {
+		"aws-sdk": "^2.1192.0",
+		"dotenv": "^16.0.1",
+		"uuid": "^8.3.2"
+	}
+}
