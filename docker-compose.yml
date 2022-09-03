@@ -7,10 +7,9 @@ services:
     environment: 
       - AWS_DEFAULT_REGION=us-east-1
       - EDGE_PORT=4566
-      - SERVICES=s3
+      - SERVICES=s3,cognito
     ports:
       - '4566:4566'
     volumes:
       - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
-
