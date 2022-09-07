@@ -4,10 +4,19 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
+		"s3:create-bucket": "node ./scripts/s3/create.js",
+		"s3:delete-bucket": "node ./scripts/s3/remove.js",
+		"s3:list-buckets": "node ./scripts/s3/list.js",
+		"s3:put-notification": "node ./scripts/s3/putNotification.js",
+		"s3:upload-file": "node ./scripts/s3/upload.js",
+		"s3:download-file": "node ./scripts/s3/download.js",
+		"s3:delete-file": "node ./scripts/s3/delete"
 	},
 	"dependencies": {
 		"aws-sdk": "^2.1192.0",
 		"dotenv": "^16.0.1",
+		"fs": "^0.0.1-security",
+		"path": "^0.12.7",
 		"uuid": "^8.3.2"
 	}
 }
