@@ -10,7 +10,16 @@
 		"s3:put-notification": "node ./scripts/s3/putNotification.js",
 		"s3:upload-file": "node ./scripts/s3/upload.js",
 		"s3:download-file": "node ./scripts/s3/download.js",
-		"s3:delete-file": "node ./scripts/s3/delete"
+		"s3:delete-file": "node ./scripts/s3/delete",
+		"cognito:create-user-pool": "node ./scripts/cognito/createUserPool.js",
+		"cognito:create-client": "node ./scripts/cognito/createClient.js",
+		"cognito:create-user": "node ./scripts/cognito/createUser.js",
+		"cognito:list-data": "node ./scripts/cognito/listData.js",
+		"cognito:signup-client": "node ./scripts/cognito/signUpClient.js",
+		"cognito:confirm-signup": "node ./scripts/cognito/confirmSignUp.js",
+		"cognito:delete-user": "node ./scripts/cognito/deleteUser.js",
+		"cognito:delete-client": "node ./scripts/cognito/deleteClient.js",
+		"cognito:delete-user-pool": "node ./scripts/cognito/deleteUserPool.js"
 	},
 	"dependencies": {
 		"aws-sdk": "^2.1192.0",

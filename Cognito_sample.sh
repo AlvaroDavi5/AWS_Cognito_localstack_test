@@ -9,7 +9,7 @@ pool_id=<my_pool_id>
 awslocal cognito-idp create-user-pool-client --client-name=test_client --user-pool-id=$pool_id
 client_id=<my_client_id>
 
-# SignUp Client in User Pool
+# SignUp Client and Create User in User Pool
 awslocal cognito-idp sign-up --client-id=$client_id --username=tester_user --password=Pass12345@ --user-attributes Name=email,Value=tester@test.com
 
 # Confirm SignUp
