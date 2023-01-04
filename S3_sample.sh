@@ -18,17 +18,17 @@ awslocal s3api put-bucket-notification-configuration --bucket=testbucket --notif
 awslocal sqs get-queue-attributes --queue-url=http://localhost:4566/queue/test_queue --attribute-names=All --endpoint-url=http://127.0.0.1:4566 --output=table | cat
 
 # Upload File to S3 Bucket
-awslocal s3 cp image.png s3://testbucket/ --endpoint-url=http://127.0.0.1:4566 --output=table | cat
+awslocal s3 cp ./assets/test_file.txt s3://testbucket/ --endpoint-url=http://127.0.0.1:4566 --output=table | cat
 
 # Generate Link to File
-awslocal s3 presign s3://testbucket/image.png --expires-in=300 # in seconds
+awslocal s3 presign s3://testbucket/test_file.txt --expires-in=300 # in seconds
 
 # Download File by Link
-wget "http://localhost:4566/testbucket/image.png?AWSAccessKeyId=mock&Signature=xxx&Expires=1672756866"
+wget "http://localhost:4566/testbucket/test_file.txt?AWSAccessKeyId=mock&Signature=xxx&Expires=1672756866"
 
 # List Received Messages from SQS
 awslocal sqs receive-message --queue-url=http://localhost:4566/queue/test_queue --attribute-names=All --message-attribute-names=All --endpoint-url=http://127.0.0.1:4566 --output=json | cat
 
 # Remove File from Bucket
-awslocal s3 rm s3://testbucket/image.png
+awslocal s3 rm s3://testbucket/test_file.txt
 
